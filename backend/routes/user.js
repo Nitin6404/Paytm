@@ -106,18 +106,10 @@ router.put("/", authMiddleware, async (req, res) => {
         })
     }
 
-    try{
-        await User.updateOne({_id: req.userId}, req.body);
-
-        res.status(200).json({
-            message: "Updated successfully"
-        });
-    }catch(e){
-        console.error(e);
-        res.status(500).json({
-            message: "Internal Server Error",
-        });
-    }
+    await User.updateOne({_id: req.userId}, req.body);
+    res.status(200).json({
+        message: "Updated successfully"
+    });
 })
 
 router.get("/bulk", async (req, res) => {

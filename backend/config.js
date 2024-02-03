@@ -1,5 +1,4 @@
-const jwtSecret = "mbolathanahikhulega";
-
+//backend/config.js
 module.exports = {
-    jwtSecret
+	JWT_SECRET: "your-jwt-secret"
 }
